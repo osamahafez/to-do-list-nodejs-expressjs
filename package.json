@@ -1,0 +1,19 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "A To-Do list using nodejs and expressjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osamahafez/to-do-list-nodejs-expressjs.git"
+  },
+  "author": "osamahafez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osamahafez/to-do-list-nodejs-expressjs/issues"
+  },
+  "homepage": "https://github.com/osamahafez/to-do-list-nodejs-expressjs#readme"
+}

@@ -25,11 +25,12 @@ app.set('view engine', 'ejs');
 app.get('/', function(req, res){
     
     Item.find({}, function(err, items){
-        res.render('home', {items: items});  
+        res.render('home', {items: items, i: 1});  
     });
     
 });
 
+// create new item
 app.post('/new', function(req, res){
 
     let item = new Item();
@@ -37,6 +38,11 @@ app.post('/new', function(req, res){
     item.checked = false;
     item.save();
     res.redirect('/');
+});
+
+// update item
+app.get('/update', function(req, res){
+   console.log('received');
 });
 
 app.listen(3000, function() {

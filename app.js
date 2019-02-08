@@ -1,11 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
 
-// parse application/x-www-form-urlencoded
+// database connection
+mongoose.connect('mongodb://localhost/todolist',  { useNewUrlParser: true } );
+
+
+// body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }))
-// parse application/json
 app.use(bodyParser.json())
 
 
@@ -25,7 +29,7 @@ app.get('/', function(req, res){
 app.post('/new', function(req, res){
 
     let item = req.body.item;
-
+    res.send(item);
 });
 
 

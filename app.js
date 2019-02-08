@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
 const app = express();
+const Item = require('./models/Item');
 
 // database connection
 mongoose.connect('mongodb://localhost/todolist',  { useNewUrlParser: true } );
@@ -28,10 +28,12 @@ app.get('/', function(req, res){
 
 app.post('/new', function(req, res){
 
-    let item = req.body.item;
-    res.send(item);
+    let item = new Item();
+    item.content = req.body.content;
+    item.checked = false;
+    item.save();
+    
 });
-
 
 app.listen(3000, function() {
     console.log('Listening on port 3000');

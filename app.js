@@ -23,7 +23,11 @@ app.set('view engine', 'ejs');
 
 // Home route
 app.get('/', function(req, res){
-    res.render('home');
+    
+    Item.find({}, function(err, items){
+        res.render('home', {items: items});  
+    });
+    
 });
 
 app.post('/new', function(req, res){
@@ -32,7 +36,7 @@ app.post('/new', function(req, res){
     item.content = req.body.content;
     item.checked = false;
     item.save();
-    
+    res.redirect('/');
 });
 
 app.listen(3000, function() {

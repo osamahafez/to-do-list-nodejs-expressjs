@@ -32,8 +32,21 @@
 
 
         <div class="content">
-            <input id="1" type="checkbox" /> 
-            <label for="1">test</label>
+
+                <%#-------- viewing all the items I wrote ------%>
+
+                <% items.forEach(function(item){ %>
+                    
+                    <% if(item.checked == true) { %>
+                        <input type="checkbox" checked>
+                    <% } else{ %>
+                        <input type="checkbox">
+                    <% } %>
+                    <label><%= item.content %></label>
+                    <br>
+
+                <% }) %> 
+                
         </div>
     </div>
 

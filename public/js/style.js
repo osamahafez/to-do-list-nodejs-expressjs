@@ -8,7 +8,12 @@ $(document).ready(function(){
         if($(this).prop('checked')){
 
             var id = $(this).attr('id');
-            //alert('check box with id '+ id +' is checked');
+            var label = $("label[for='" + id + "']");
+
+            label.css({
+                "color": "green", 
+                "font-weight": "bold"
+            });
             
             // method must be POST request to work
             $.ajax({
@@ -22,8 +27,13 @@ $(document).ready(function(){
         else if(!$(this).prop('checked')) {
 
             var id = $(this).attr('id');
-            //alert('check box with id '+ id +' is unchecked');
+            var label = $("label[for='" + id + "']");
 
+            label.css({
+                "color": "black",
+                "font-weight": "normal" 
+            });
+        
             // method must be POST request to work
             $.ajax({
                 type: 'POST',

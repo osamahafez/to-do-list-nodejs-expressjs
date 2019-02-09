@@ -38,11 +38,11 @@
                 <% items.forEach(function(item){ %>
                     
                     <% if(item.checked == true) { %>
-                        <input type="checkbox" checked id="<%=item._id%>">
+                        <input type="checkbox" checked id="<%=item._id%>" class="css-checkbox" />
                     <% } else{ %>
-                        <input type="checkbox" id="<%=item._id%>">
+                        <input type="checkbox" id="<%=item._id%>" class="css-checkbox" />
                     <% } %>
-                    <label for="<%=item._id%>"><%= item.content %></label>
+                    <label for="<%=item._id%>" class="css-label dark-check-green"><%= item.content %></label>
                     <br>
                    
                 <% }) %> 

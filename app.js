@@ -25,7 +25,7 @@ app.set('view engine', 'ejs');
 app.get('/', function(req, res){
     
     Item.find({}, function(err, items){
-        res.render('home', {items: items, i: 1});  
+        res.render('home', {items: items});  
     });
     
 });
@@ -41,8 +41,29 @@ app.post('/new', function(req, res){
 });
 
 // update item
-app.get('/update', function(req, res){
-   console.log('received');
+app.post('/update', function(req, res){
+    
+    let id = req.body.id;
+    let state = req.body.state;
+
+    if(state == 'checked') {
+        Item.updateOne({_id:id}, {checked: true}, function(err){
+            if(err) 
+                throw err;
+            else 
+                console.log('item updated')
+        });
+    }
+    else if(state == 'unchecked') {
+        Item.updateOne({_id:id}, {checked: false}, function(err){
+            if(err) 
+                throw err;
+            else 
+                console.log('item updated')
+        });
+    }
+
+    res.redirect('/');
 });
 
 app.listen(3000, function() {

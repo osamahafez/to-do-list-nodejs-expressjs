@@ -8,7 +8,7 @@ $(document).ready(function(){
         if($(this).prop('checked')){
 
             var id = $(this).attr('id');
-            alert('check box with id '+ id +' is checked');
+            //alert('check box with id '+ id +' is checked');
             
             // method must be POST request to work
             $.ajax({
@@ -22,7 +22,7 @@ $(document).ready(function(){
         else if(!$(this).prop('checked')) {
 
             var id = $(this).attr('id');
-            alert('check box with id '+ id +' is unchecked');
+            //alert('check box with id '+ id +' is unchecked');
 
             // method must be POST request to work
             $.ajax({

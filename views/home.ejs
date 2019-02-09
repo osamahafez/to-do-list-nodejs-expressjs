@@ -2,7 +2,7 @@
 
     <div class="container container-custom">
         <div class="row justify-content-center">
-            <button type="button" class="btn btn-info btn-block btn-lg" data-toggle="modal" data-target="#myModal">New Item</button>
+            <button type="button" class="btn btn-info btn-block btn-lg" data-toggle="modal" data-target="#myModal">Add New Item</button>
         </div>
         
         <!-- The Modal -->
@@ -43,8 +43,10 @@
                         <input type="checkbox" id="<%=item._id%>" class="css-checkbox" />
                     <% } %>
                     <label for="<%=item._id%>" class="css-label dark-check-green"><%= item.content %></label>
-                    <br>
-                   
+                    <button id="close-btn" type="button" class="close text-danger" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <hr>
                 <% }) %> 
 
         </div>

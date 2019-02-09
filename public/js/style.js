@@ -9,17 +9,12 @@ $(document).ready(function(){
 
             var id = $(this).attr('id');
             alert('check box with id '+ id +' is checked');
-           
+            
+            // method must be POST request to work
             $.ajax({
-                type: 'GET',
+                type: 'POST',
                 url: '/update',
-                data: id,
-                success: function() {
-                    alert('success');
-                },
-                error: function() {
-                    alert('error');
-                }
+                data: {id: id,  state: "checked"},
             });
         }
 
@@ -29,16 +24,11 @@ $(document).ready(function(){
             var id = $(this).attr('id');
             alert('check box with id '+ id +' is unchecked');
 
+            // method must be POST request to work
             $.ajax({
-                type: 'GET',
+                type: 'POST',
                 url: '/update',
-                data: {id:id, state:'unchecked'},
-                success: function() {
-                    alert('success');
-                },
-                error: function() {
-                    alert('error');
-                }
+                data: {id:id, state:"unchecked"},
             });
         }
     });

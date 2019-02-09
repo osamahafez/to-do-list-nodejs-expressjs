@@ -66,6 +66,20 @@ app.post('/update', function(req, res){
     res.redirect('/');
 });
 
+// delete item
+app.delete('/delete', function(req, res){
+    
+    let id = req.body.id;
+    Item.deleteOne({_id:id}, function(err){
+        if(err) 
+            throw err;
+        else 
+            console.log('item deleted');
+    });
+    
+    res.redirect('/');
+});
+
 app.listen(3000, function() {
     console.log('Listening on port 3000');
 });

@@ -43,4 +43,16 @@ $(document).ready(function(){
         }
     });
 
+
+    $('.close-btn').click(function(){
+
+        var id = $(this).attr('data-checkbox');
+        
+        $.ajax({
+            type: 'DELETE',
+            url: '/delete',
+            data: {id: id}
+        });
+    });
+
 });
